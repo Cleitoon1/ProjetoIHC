@@ -124,7 +124,7 @@
     var fogDensity     = 10;                       // exponential fog density
     var position       = 0;                       // current camera Z position (add playerZ to get player's absolute Z position)
     var speed          = 40;                       // current speed
-    var maxSpeed       = segmentLength/step;      // top speed (ensure we can't move more than 1 segment in a single frame to make collision detection easier)
+    var maxSpeed       = ((segmentLength/step) - 6000);      // top speed (ensure we can't move more than 1 segment in a single frame to make collision detection easier)
     var accel          =  maxSpeed/10;             // acceleration rate - tuned until it 'felt' right
     var breaking       = -maxSpeed;               // deceleration rate when braking
     var decel          = -maxSpeed/5;             // 'natural' deceleration rate when neither accelerating, nor braking
@@ -139,6 +139,37 @@
     var keyFaster      = true;
     var keySlower      = false;
 
+	
+	window.addEventListener('load', function(){
+ 
+    var box1 = document.getElementById('canvas')
+    var startx = 0
+    var dist = 0
+ 
+    box1.addEventListener('touchstart', function(e){
+        //var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
+       // startx = parseInt(touchobj.clientX) // get x position of touch point relative to left edge of browser
+       // statusdiv.innerHTML = 'Status: touchstart<br> ClientX: ' + startx + 'px'
+	   while(parseInt(document.getElementById("speedvalue").innerText) <= 120)
+	   {
+	   setTimeout(function(){ maxSpeed -= 1000; }, 3000);
+	   }
+        e.preventDefault()
+    }, false)
+ 
+ 
+    box1.addEventListener('touchend', function(e){
+      //  var touchobj = e.changedTouches[0] // reference first touch point for this event
+      //  statusdiv.innerHTML = 'Status: touchend<br> Resting x coordinate: ' + touchobj.clientX + 'px'
+        e.preventDefault()
+    }, false)
+ 
+}, false)
+	
+	
+	
+	
+	
     var hud = {
       speed:            { value: null, dom: Dom.get('speed_value')            },
       current_lap_time: { value: null, dom: Dom.get('current_lap_time_value') },
@@ -176,7 +207,7 @@
         speed = Util.accelerate(speed, breaking, dt);
       else
         speed = Util.accelerate(speed, decel, dt);
-
+	
 
       if ((playerX < -1) || (playerX > 1)) {
 
@@ -188,13 +219,11 @@
           spriteW = sprite.source.w * SPRITES.SCALE;
           if (Util.overlap(playerX, playerW, sprite.offset + spriteW/2 * (sprite.offset > 0 ? 1 : -1), spriteW)) {
             speed = maxSpeed/5;
-         
-            position = Util.increase(playerSegment.p1.world.z, -playerZ, trackLength); // stop in front of sprite (at front of segment)
-              if (window.DeviceOrientationEvent) {
-                navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-          			navigator.vibrate([500, 300, 100]);
-          		
+			if (window.DeviceOrientationEvent) {			
+			navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+			navigator.vibrate([500, 300, 100]);
 			}
+            position = Util.increase(playerSegment.p1.world.z, -playerZ, trackLength); // stop in front of sprite (at front of segment)
             break;
           }
         }
@@ -207,10 +236,9 @@
           if (Util.overlap(playerX, playerW, car.offset, carW, 0.8)) {
             speed    = car.speed * (car.speed/speed);
             position = Util.increase(car.z, -playerZ, trackLength);
-            if (window.DeviceOrientationEvent) {
-                navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-          			navigator.vibrate([500, 300, 100]);
-          		
+			if (window.DeviceOrientationEvent) {			
+			navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+			navigator.vibrate([500, 300, 100]);
 			}
             break;
           }
