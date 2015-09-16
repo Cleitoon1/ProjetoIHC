@@ -645,15 +645,17 @@
     //=========================================================================
     function touch(){
 	    if(window.DeviceOrientationEvent){
-	window.addEventListener("deviceorientation", orientation, false);
+	window.addEventListener("deviceorientation", orientation(eventData), false);
 	}
       }
 function orientation(event){
-    if(event.accelerationIncludingGravity.x > 0.20)
+   // if(event.accelerationIncludingGravity.x > 0.20)
+   if(eventData.gamma < 2)
     {
     	keyLeft = true;
     }
-    else if(event.accelerationIncludingGravity.x < -0.20) 
+   // else if(event.accelerationIncludingGravity.x < -2) 
+   else if(eventData.gamma > 2)
     {
     	keyRight  = true;
     }
