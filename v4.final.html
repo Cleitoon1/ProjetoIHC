@@ -643,6 +643,28 @@
     //=========================================================================
     // THE GAME LOOP
     //=========================================================================
+    function touch(){
+	    if(window.DeviceOrientationEvent){
+	window.addEventListener("deviceorientation", orientation, false);
+	}
+      }
+function orientation(event){
+    if(event.accelerationIncludingGravity.x > 0.20)
+    {
+    	keyLeft = true;
+    }
+    else if(event.accelerationIncludingGravity.x < -0.20) 
+    {
+    	keyRight  = true;
+    }
+    else
+    {
+    	keyLeft = false;
+    	keyRight  = false;
+    }
+    subir = document.body.addEventListener('touchstart',function() { keyFaster = true; });
+    descer = document.body.addEventListener('touchend', function() { keyFaster = false; });
+}
 
     Game.run({
       canvas: canvas, render: render, update: update, stats: stats, step: step,
