@@ -650,17 +650,15 @@
 	   if(eventData.accelerationIncludingGravity.x < 0)
 	    {
 	    	keyRight = true;
+	    	keyLeft = false;
 	    }
 	   // else if(event.accelerationIncludingGravity.x < -2) 
-	   else if(eventData.accelerationIncludingGravity.x > 0)
+	   else
 	    {
+	   	keyRight  = false;
 	    	keyLeft  = true;
 	    }
-	    else
-	    {
-	    	keyLeft = false;
-	    	keyRight  = false;
-	    }
+	    
 	    subir = document.body.addEventListener('touchstart',function() { keyFaster = true; });
 	    descer = document.body.addEventListener('touchend', function() { keyFaster = false; });
 		
