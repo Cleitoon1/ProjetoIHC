@@ -136,35 +136,35 @@
 
     var keyLeft        = false;
     var keyRight       = false;
-    var keyFaster      = true;
+    var keyFaster      = false;
     var keySlower      = false;
 
 	
-	window.addEventListener('load', function(){
+//	window.addEventListener('load', function(){
  
-    var box1 = document.getElementById('canvas')
-    var startx = 0
-    var dist = 0
+//    var box1 = document.getElementById('canvas')
+//    var startx = 0
+//    var dist = 0
  
-    box1.addEventListener('touchstart', function(e){
+//    box1.addEventListener('touchstart', function(e){
         //var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
        // startx = parseInt(touchobj.clientX) // get x position of touch point relative to left edge of browser
        // statusdiv.innerHTML = 'Status: touchstart<br> ClientX: ' + startx + 'px'
-	   while(parseInt(document.getElementById("speedvalue").innerText) <= 120)
-	   {
-	   setTimeout(function(){ maxSpeed -= 1000; }, 3000);
-	   }
-        e.preventDefault()
-    }, false)
+//	   while(parseInt(document.getElementById("speedvalue").innerText) <= 120)
+//	   {
+//	   setTimeout(function(){ maxSpeed -= 1000; }, 3000);
+//	   }
+ //       e.preventDefault()
+//    }, false)
  
  
-    box1.addEventListener('touchend', function(e){
+ //   box1.addEventListener('touchend', function(e){
       //  var touchobj = e.changedTouches[0] // reference first touch point for this event
       //  statusdiv.innerHTML = 'Status: touchend<br> Resting x coordinate: ' + touchobj.clientX + 'px'
-        e.preventDefault()
-    }, false)
+ //       e.preventDefault()
+ //   }, false)
  
-}, false)
+//}, false)
 	
 	
 	
@@ -655,10 +655,7 @@
         { keys: [KEY.LEFT,  KEY.A], mode: 'up',   action: function() { keyLeft   = false; } },
         { keys: [KEY.RIGHT, KEY.D], mode: 'up',   action: function() { keyRight  = false; } },
         { keys: [KEY.UP,    KEY.W], mode: 'up',   action: function() { keyFaster = false; } },
-        { keys: [KEY.DOWN,  KEY.S], mode: 'up',   action: function() { keySlower = false; } },
-        { keys: [KEY.SUBIR,  KEY.A], mode: 'down', action: function() { keyFaster   = true;  } },
-        { keys: [KEY.DIREITA, KEY.D], mode: 'down', action: function() { keyRight  = true;  } },
-        { keys: [KEY.ESQUERDA,    KEY.W], mode: 'down', action: function() { keyLeft = true;  } },
+        { keys: [KEY.DOWN,  KEY.S], mode: 'up',   action: function() { keySlower = false; } }
       ],
       ready: function(images) {
         background = images[0];
