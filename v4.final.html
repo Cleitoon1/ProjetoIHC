@@ -644,7 +644,7 @@
     // THE GAME LOOP
     //=========================================================================
     function touch(){
-	    if(window.){
+	    if(window.DeviceMotionEvent){
 	window.addEventListener("devicemotion", function(eventData){
 		// if(event.accelerationIncludingGravity.x > 0.20)
 	   if(eventData.accelerationIncludingGravity.x < (-0.20))
