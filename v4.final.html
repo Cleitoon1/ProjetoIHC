@@ -646,14 +646,16 @@
     function touch(){
 	    if(window.DeviceMotionEvent){
 	window.addEventListener("devicemotion", function(eventData){
+		if(eventData.accelerationIncludingGravity.x != null)
+		{
 		// if(event.accelerationIncludingGravity.x > 0.20)
-	   if(eventData.accelerationIncludingGravity.x < 0)
+	   if(eventData.accelerationIncludingGravity.x < (0.30))
 	    {
 	    	keyRight = true;
 	    	keyLeft = false;
 	    }
 	   // else if(event.accelerationIncludingGravity.x < -2) 
-	   else
+	   if(event.accelerationIncludingGravity.x < (-0.30))
 	    {
 	   	keyRight  = false;
 	    	keyLeft  = true;
@@ -661,7 +663,7 @@
 	    
 	    subir = document.body.addEventListener('touchstart',function() { keyFaster = true; });
 	    descer = document.body.addEventListener('touchend', function() { keyFaster = false; });
-		
+		}	
 	}, false);
 	}
       }
