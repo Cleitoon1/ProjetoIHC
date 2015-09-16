@@ -645,7 +645,7 @@
     //=========================================================================
     function touch(){
 	    if(window.DeviceOrientationEvent){
-	window.addEventListener("deviceorientation", orientation(eventData){
+	window.addEventListener("deviceorientation", function(eventData){
 		// if(event.accelerationIncludingGravity.x > 0.20)
 	   if(eventData.gamma < 2)
 	    {
