@@ -341,7 +341,19 @@ var Render = {
 //=============================================================================
 // RACING GAME CONSTANTS
 //=============================================================================
-
+var direita = 39;
+var esquerda = 37;
+var subir = 38;
+if(window.DeviceOrientationEvent){
+window.addEventListener("deviceorientation", orientation, false);
+}
+function orientation(event){
+    if(event.accelerationIncludingGravity.x > 0)
+      direita = accelerationIncludingGravity.x;
+    else
+      esquerda = accelerationIncludingGravity.x;
+    subir = document.body.addEventListener('touchstart');
+}
 var KEY = {
   LEFT:  37,
   UP:    38,
@@ -350,7 +362,10 @@ var KEY = {
   A:     65,
   D:     68,
   S:     83,
-  W:     87
+  W:     87,
+  DIREITA: direita,
+  ESQUERDA: esquerda,
+  SUBIR: subir
 };
 
 var COLORS = {
