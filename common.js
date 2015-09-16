@@ -341,32 +341,12 @@ var Render = {
 //=============================================================================
 // RACING GAME CONSTANTS
 //=============================================================================
-var direita;
-var esquerda;
-var subir;
-var descer;
-if(window.DeviceOrientationEvent){
-window.addEventListener("deviceorientation", orientation, false);
-}
-else{
-direita = 39;
-esquerda = 37;
-subir = 38;
-descer = 39;
-}
-function orientation(event){
-    if(event.accelerationIncludingGravity.x > 0)
-      direita = accelerationIncludingGravity.x;
-    else
-      esquerda = accelerationIncludingGravity.x;
-    subir = document.body.addEventListener('touchstart');
-    descer = document.body.addEventListener('touchend');
-}
+
 var KEY = {
-  LEFT:  esquerda,
-  UP:    subir,
-  RIGHT: direta,
-  DOWN:  descer,
+  LEFT:  37,
+  UP:    38,
+  RIGHT: 39,
+  DOWN:  40,
   A:     65,
   D:     68,
   S:     83,
