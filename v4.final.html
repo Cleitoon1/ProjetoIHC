@@ -647,12 +647,12 @@
 	    if(window.DeviceOrientationEvent){
 	window.addEventListener("deviceorientation", function(eventData){
 		// if(event.accelerationIncludingGravity.x > 0.20)
-	   if(eventData.gamma < 2)
+	   if(eventData.acceleration.x < (-0.20))
 	    {
 	    	keyLeft = true;
 	    }
 	   // else if(event.accelerationIncludingGravity.x < -2) 
-	   else if(eventData.gamma > 2)
+	   else if(eventData.acceleration.x > (0.20))
 	    {
 	    	keyRight  = true;
 	    }
