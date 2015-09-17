@@ -649,13 +649,13 @@
 	window.addEventListener("devicemotion", function(eventData){
 		if(eventData.accelerationIncludingGravity.x != null)
 		{
-	   if(eventData.accelerationIncludingGravity.x < (2))
+	   if(eventData.accelerationIncludingGravity.x > 2)
 	    {
 	    	keyRight = true;
 	    	keyLeft = false;
 	    }
 	   
-	   else if(event.accelerationIncludingGravity.x > (2))
+	   else if(event.accelerationIncludingGravity.x < -2)
 	    {
 	   	keyRight  = false;
 	    	keyLeft  = true;
