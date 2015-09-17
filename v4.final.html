@@ -44,7 +44,7 @@
       <td><input id="fogDensity" type='range' min='0' max='50' title="integer (0-50)"></td>
     </tr>
   </table>
-  document.getElementById('controls').style.display = "none";
+  
 <!--
   <div id='instructions'>
     <p>Use the <b>arrow keys</b> to drive the car.</p>
@@ -72,6 +72,7 @@
   <script src="stats.js"></script>
   <script src="common.js"></script>
   <script>
+  document.getElementById('standard').style.display = "controls";
     touch();
     var fps            = 60;                      // how many 'update' frames per second
     var step           = 1/fps;                   // how long is each frame (in seconds)
