@@ -650,16 +650,20 @@
 		if(eventData.accelerationIncludingGravity.x != null)
 		{
 		// if(event.accelerationIncludingGravity.x > 0.20)
-	   if(eventData.accelerationIncludingGravity.x < (0.30))
+	   if(eventData.accelerationIncludingGravity.x < (0.50))
 	    {
 	    	keyRight = true;
 	    	keyLeft = false;
 	    }
 	   // else if(event.accelerationIncludingGravity.x < -2) 
-	   if(event.accelerationIncludingGravity.x < (-0.30))
+	   else if(event.accelerationIncludingGravity.x < (-0.50))
 	    {
 	   	keyRight  = false;
 	    	keyLeft  = true;
+	    }
+	    else{
+	    	keyRight = false;
+	    	keyLeft = false;
 	    }
 	    
 	    subir = document.body.addEventListener('touchstart',function() { keyFaster = true; });
