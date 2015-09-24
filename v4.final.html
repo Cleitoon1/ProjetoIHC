@@ -63,7 +63,7 @@
       <th><label for="fogDensity">Fog Density (<span id="currentFogDensity"></span>) :</label></th>
       <td><input id="fogDensity" type='range' min='0' max='50' title="integer (0-50)"></td>
     </tr>
-    <tr><td><canvas id="canvas2"></canvas><img id="accelerator" src="http://s14.postimg.org/whba7t36l/Pedalcarro.png"/></canvas></td></tr>
+  <!--  <tr><td></canvas><img id="accelerator" src="http://s14.postimg.org/whba7t36l/Pedalcarro.png"/></td></tr>-->
   </table>
   
 <!--
@@ -643,12 +643,11 @@
         cars.push(car);
       }
     }
-    var canvas1 = document.getElementById('canvas2');
-    var context1 = canvas1.getContext('2d');
+  
 	    var img = new Image();
 	    img.id = "accelerator";
 	    img.src = 'http://s14.postimg.org/whba7t36l/Pedalcarro.png';
-	    ctx.drawImage(context1, 10, 10);
+	    ctx.drawImage(img, 10, 10);
     //=========================================================================
     // THE GAME LOOP
     //=========================================================================
