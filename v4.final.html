@@ -63,7 +63,7 @@
       <th><label for="fogDensity">Fog Density (<span id="currentFogDensity"></span>) :</label></th>
       <td><input id="fogDensity" type='range' min='0' max='50' title="integer (0-50)"></td>
     </tr>
-    <tr><td><img src="http://s15.postimg.org/4z3o7wo97/Pedalcarro.png"/></td></tr>
+    <tr><td><img id="accelerator" src="http://s15.postimg.org/4z3o7wo97/Pedalcarro.png"/></td></tr>
   </table>
   
 <!--
@@ -668,8 +668,8 @@
 	    	keyLeft = false;
 	    }
 	    
-	    subir = document.body.addEventListener('touchstart',function() { keyFaster = true; });
-	    descer = document.body.addEventListener('touchend', function() { keyFaster = false; });
+	    subir = document.getElementById("accelerator").addEventListener('touchstart',function() { keyFaster = true; });
+	    descer = document.getElementById("accelerator").addEventListener('touchend', function() { keyFaster = false; });
 		}	
 	}, false);
 	}
