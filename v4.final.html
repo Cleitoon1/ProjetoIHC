@@ -667,25 +667,25 @@
 	    	keyRight = false;
 	    	keyLeft = false;
 	    }
-	if((eventData.accelerationIncludingGravity.z > 1) && (eventData.accelerationIncludingGravity.z <= 3))
+	if(eventData.accelerationIncludingGravity.z > 1) && (eventData.accelerationIncludingGravity.z <= 3)
 	{
 		keyFaster = true;
-		maxSpeed = ((segmentLength/step) - 6000);
+		maxSpeed = (maxSpeed - 6000);
 	}
-	else if((eventData.accelerationIncludingGravity.z > 3) && (eventData.accelerationIncludingGravity.z <= 5))
+	else if(eventData.accelerationIncludingGravity.z > 3) && (eventData.accelerationIncludingGravity.z <= 5)
 	{	
 		keyFaster = true;
-		maxSpeed = (segmentLength/step);
+		maxSpeed = maxSpeed;
 	}
 	else if(eventData.accelerationIncludingGravity.z > 5)
 	{	
 		keyFaster = true;
-		maxSpeed = ((segmentLength/step) + 8000);
+		maxSpeed = (maxSpeed + 8000);
 	}
 	else if 
 	{
 		keyFaster = false;
-		((segmentLength/step) - 6000);
+		
 	}
 	   // subir = document.getElementById("accelerator").addEventListener('touchstart',function() { keyFaster = true; });
 	   // descer = document.getElementById("accelerator").addEventListener('touchend', function() { keyFaster = false; });
