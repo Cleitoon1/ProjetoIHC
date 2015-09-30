@@ -63,7 +63,7 @@
       <th><label for="fogDensity">Fog Density (<span id="currentFogDensity"></span>) :</label></th>
       <td><input id="fogDensity" type='range' min='0' max='50' title="integer (0-50)"></td>
     </tr>
-  <tr><td><img id="accelerator" src="http://s14.postimg.org/whba7t36l/Pedalcarro.png"/></td></tr>
+  <tr><td><img id="accelerator" src="http://s17.postimg.org/akmmyyhvv/image.jpg"/></td></tr>
   </table>
   
 <!--
@@ -671,21 +671,24 @@
 	{
 		keyFaster = true;
 		maxSpeed = ((segmentLength/step) - 6000) ;
+		document.getElementById("imageid").src="http://s17.postimg.org/eshf7pjbf/image.jpg";
 	}
 	else if((eventData.accelerationIncludingGravity.z > 6) && (eventData.accelerationIncludingGravity.z <= 10))
 	{	
 		keyFaster = true;
 		maxSpeed = (segmentLength/step);
+		document.getElementById("imageid").src="http://s17.postimg.org/k2mdz03kb/image.jpg";
 	}
 	else if(eventData.accelerationIncludingGravity.z > 10)
 	{	
 		keyFaster = true;
 		maxSpeed = ((segmentLength/step) + 8000) ;
+		document.getElementById("imageid").src="http://s17.postimg.org/rmfh11wqz/image.jpg";
 	}
 	else
 	{
 		keyFaster = false;
-		
+		document.getElementById("imageid").src="http://s17.postimg.org/akmmyyhvv/image.jpg";
 	}
 	   // subir = document.getElementById("accelerator").addEventListener('touchstart',function() { keyFaster = true; });
 	   // descer = document.getElementById("accelerator").addEventListener('touchend', function() { keyFaster = false; });
