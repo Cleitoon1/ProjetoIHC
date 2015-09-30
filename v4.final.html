@@ -667,15 +667,15 @@
 	    	keyRight = false;
 	    	keyLeft = false;
 	    }
-	if(eventData.accelerationIncludingGravity.z > 1) && (eventData.accelerationIncludingGravity.z <= 3)
+	if((eventData.accelerationIncludingGravity.z > 1) && (eventData.accelerationIncludingGravity.z <= 3))
 	{
 		keyFaster = true;
-		maxSpeed = maxSpeed - 14000 ;
+		maxSpeed = (maxSpeed - 14000) ;
 	}
-	else if(eventData.accelerationIncludingGravity.z > 3) && (eventData.accelerationIncludingGravity.z <= 5)
+	else if((eventData.accelerationIncludingGravity.z > 3) && (eventData.accelerationIncludingGravity.z <= 5))
 	{	
 		keyFaster = true;
-		maxSpeed = maxSpeed - 8000;
+		maxSpeed = (maxSpeed - 8000);
 	}
 	else if(eventData.accelerationIncludingGravity.z > 5)
 	{	
