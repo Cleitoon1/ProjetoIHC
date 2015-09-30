@@ -667,9 +667,16 @@
 	    	keyRight = false;
 	    	keyLeft = false;
 	    }
-
-	    subir = document.getElementById("accelerator").addEventListener('touchstart',function() { keyFaster = true; });
-	    descer = document.getElementById("accelerator").addEventListener('touchend', function() { keyFaster = false; });
+	if(eventData.accelerationIncludingGravity.z > 5)
+	{
+		keyFaster = true;
+	}
+	else
+	{
+		keyFaster = false;
+	}
+	   // subir = document.getElementById("accelerator").addEventListener('touchstart',function() { keyFaster = true; });
+	   // descer = document.getElementById("accelerator").addEventListener('touchend', function() { keyFaster = false; });
 		}	
 	}, false);
 	}
