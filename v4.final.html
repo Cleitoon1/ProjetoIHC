@@ -670,17 +670,17 @@
 	if((eventData.accelerationIncludingGravity.z > 1) && (eventData.accelerationIncludingGravity.z <= 3))
 	{
 		keyFaster = true;
-		maxSpeed = (maxSpeed - 14000) ;
+		maxSpeed = ((segmentLength/step) - 6000) ;
 	}
 	else if((eventData.accelerationIncludingGravity.z > 3) && (eventData.accelerationIncludingGravity.z <= 5))
 	{	
 		keyFaster = true;
-		maxSpeed = (maxSpeed - 8000);
+		maxSpeed = (segmentLength/step);
 	}
 	else if(eventData.accelerationIncludingGravity.z > 5)
 	{	
 		keyFaster = true;
-		maxSpeed = maxSpeed ;
+		maxSpeed = ((segmentLength/step) + 8000) ;
 	}
 	else
 	{
