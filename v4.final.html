@@ -667,7 +667,9 @@
 	    	keyRight = false;
 	    	keyLeft = false;
 	    }
-	if((eventData.accelerationIncludingGravity.z > 2) && (eventData.accelerationIncludingGravity.z <= 6))
+	    subir = document.getElementById("accelerator").addEventListener('touchstart',function() { keyFaster = true; });
+	    descer = document.getElementById("accelerator").addEventListener('touchend', function() { keyFaster = false; });
+/*	if((eventData.accelerationIncludingGravity.z > 2) && (eventData.accelerationIncludingGravity.z <= 6))
 	{
 		keyFaster = true;
 		maxSpeed = ((segmentLength/step) - 6000) ;
@@ -689,9 +691,7 @@
 	{
 		keyFaster = false;
 		document.getElementById("accelerator").src="http://s17.postimg.org/akmmyyhvv/image.jpg";
-	}
-	   // subir = document.getElementById("accelerator").addEventListener('touchstart',function() { keyFaster = true; });
-	   // descer = document.getElementById("accelerator").addEventListener('touchend', function() { keyFaster = false; });
+	}*/
 		}	
 	}, false);
 	}
