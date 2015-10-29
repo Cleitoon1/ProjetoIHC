@@ -647,6 +647,18 @@
     //=========================================================================
     // THE GAME LOOP
     //=========================================================================
+    function exibirMarchas()
+    {
+    	if (maxSpeed == ((segmentLength/step) - 6000)) 
+		document.getElementById("accelerator").src="http://s17.postimg.org/eshf7pjbf/image.jpg";
+	else if(maxSpeed == (segmentLength/step));
+		document.getElementById("accelerator").src="http://s17.postimg.org/k2mdz03kb/image.jpg"
+	else if(maxSpeed == ((segmentLength/step) + 8000)) 
+		document.getElementById("accelerator").src="http://s17.postimg.org/rmfh11wqz/image.jpg";
+	else if(keyFaster == false)
+		document.getElementById("accelerator").src="http://s17.postimg.org/akmmyyhvv/image.jpg")
+		
+    }
     function touch(){
 	    if(window.DeviceMotionEvent){
 	window.addEventListener("devicemotion", function(eventData){
