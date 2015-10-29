@@ -94,7 +94,7 @@
   <script src="common.js"></script>
   <script>
     touch();
-    exibirMarchas();
+
     var fps            = 60;                      // how many 'update' frames per second
     var step           = 1/fps;                   // how long is each frame (in seconds)
     var width          = 1024;                    // logical canvas width
@@ -648,8 +648,7 @@
     //=========================================================================
     // THE GAME LOOP
     //=========================================================================
-    function exibirMarchas()
-    {
+  
     	if (maxSpeed == ((segmentLength/step) - 6000)) 
 		document.getElementById("accelerator").src="http://s17.postimg.org/eshf7pjbf/image.jpg";
 	else if(maxSpeed == (segmentLength/step))
@@ -658,7 +657,7 @@
 		document.getElementById("accelerator").src="http://s17.postimg.org/rmfh11wqz/image.jpg";
 	else if(keyFaster == false)
 		document.getElementById("accelerator").src="http://s17.postimg.org/akmmyyhvv/image.jpg";
-    }
+
     function touch(){
 	    if(window.DeviceMotionEvent){
 	window.addEventListener("devicemotion", function(eventData){
