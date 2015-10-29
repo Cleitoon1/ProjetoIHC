@@ -23,6 +23,7 @@
     </tr> -->
     <tr><td id="fps" colspan="2" align="right"></td></tr>
     <tr>
+    	<!--
       <th><label for="resolution">Resolution :</label></th>
       <td>
         <select id="resolution" style="width:100%">
@@ -32,7 +33,7 @@
           <option value='low'>Low (480x360)</option>
         </select>
       </td>
-    </tr>
+    </tr>-->
     <tr>
       <th><label for="lanes">Lanes :</label></th>
       <td>
@@ -123,7 +124,7 @@
     var ctx            = canvas.getContext('2d'); // ...and its drawing context
     var background     = null;                    // our background image (loaded below)
     var sprites        = null;                    // our spritesheet (loaded below)
-    var resolution     = null;                    // scaling factor to provide resolution independence (computed)
+    var resolution     = "high";                    // scaling factor to provide resolution independence (computed)
     var roadWidth      = 3000;                    // actually half the roads width, easier math if the road spans from -roadWidth to +roadWidth
     var segmentLength  = 200;                     // length of a single segment
     var rumbleLength   = 3;                       // number of segments per red/white rumble strip
