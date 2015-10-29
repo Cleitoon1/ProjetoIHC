@@ -93,9 +93,17 @@
 
   <script src="stats.js"></script>
   <script src="common.js"></script>
+  <style>
+  	#racer {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+  </style>
   <script>
     touch();
-    $("#racer").disableSelection();
     var fps            = 60;                      // how many 'update' frames per second
     var step           = 1/fps;                   // how long is each frame (in seconds)
     var width          = 1024;                    // logical canvas width
